@@ -1,0 +1,29 @@
+@import 'mixins';
+
+@font-face {
+  font-family: 'Sky Text';
+  src: url('https://www.sky.com/assets/fonts/sky-regular.woff') format("woff");
+}
+
+@font-face {
+  font-family: 'Sky Text';
+  src: url('https://www.sky.com/assets/fonts/sky-medium.woff') format("woff");
+  font-weight: bold;
+}
+
+html {
+    @include linear-gradient('to bottom right', #0078db, #0d1f3a);
+    height: 100%;
+}
+
+body {
+    font-family: 'Sky Text', Helvetica, Arial, sans-serif;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    box-sizing: border-box;
+}
