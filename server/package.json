@@ -1,0 +1,11 @@
+{
+  "name": "moodslider-server",
+  "version": "1.0.0",
+  "description": "Server for Sky SEA coding test app Moodslider",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrius Palivonas <andrius@palivonas.lt>",
+  "license": "ISC"
+}
