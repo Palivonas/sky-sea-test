@@ -11,19 +11,25 @@
   font-weight: bold;
 }
 
-html{
-    @include linear-gradient('to bottom right', #0078db, #0d1f3a);
-    min-height: 100%;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  @include linear-gradient('to bottom right', #0078db, #0d1f3a);
+  min-height: 100%;
 }
 
 body {
-    font-family: 'Sky Text', Helvetica, Arial, sans-serif;
-    color: white;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  min-height: 100%;
+  font-family: 'Sky Text', Helvetica, Arial, sans-serif;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-    box-sizing: border-box;
+a {
+  color: inherit;
+  text-decoration: none;
 }

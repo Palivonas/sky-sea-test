@@ -6,14 +6,14 @@
         <div class="right">
           <h1>The Moodslider</h1>
           <nav>
-            <a @click="goToPage('index')" :class="{active: currentPage === 'index'}">Moodslider</a>
-            <a @click="goToPage('upload')" :class="{active: currentPage === 'upload'}">Upload Content</a>
+            <a @click="goToPage('index')" :class="{ active: currentPage === 'index' }">Moodslider</a>
+            <a @click="goToPage('upload')" :class="{ active: currentPage === 'upload' }">Upload Content</a>
           </nav>
         </div>
       </header>
       <section class="page-content">
-        <IndexPage v-if="currentPage === 'index'" />
-        <UploadPage v-else-if="currentPage === 'upload'" />
+        <IndexPage v-if="currentPage === 'index'"/>
+        <UploadPage v-else-if="currentPage === 'upload'"/>
       </section>
       <footer></footer>
     </div>
@@ -21,26 +21,26 @@
 </template>
 
 <script>
-import IndexPage from './components/IndexPage';
-import UploadPage from './components/UploadPage';
+  import IndexPage from './components/IndexPage';
+  import UploadPage from './components/UploadPage';
 
-export default {
-  name: 'app',
-  data() {
-    return {
-      currentPage: 'index',
-    };
-  },
-  components: {
-    IndexPage,
-    UploadPage,
-  },
-  methods: {
-    goToPage(page) {
-      this.currentPage = page;
+  export default {
+    name: 'app',
+    data() {
+      return {
+        currentPage: 'index',
+      };
     },
-  },
-};
+    components: {
+      IndexPage,
+      UploadPage,
+    },
+    methods: {
+      goToPage(page) {
+        this.currentPage = page;
+      },
+    },
+  };
 </script>
 
 <style lang="scss">
@@ -51,10 +51,13 @@ export default {
   @import 'assets/mixins';
 
   .container {
-    max-width: 700px;
-    margin: 60px auto 20px;
+    max-width: 820px;
+    margin: 50px auto 20px;
     padding: 10px;
-    // background: rgba(255, 255, 255, 0.05);
+
+    @media (max-width: 555px) {
+      margin-top: 10px;
+    }
   }
 
   header {
@@ -63,6 +66,7 @@ export default {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    user-select: none;
 
     .logo {
       margin-right: 20px;
@@ -84,10 +88,12 @@ export default {
       $activeColor: rgba(173, 216, 230, 0.25);
 
       a {
+        border-radius: 2px;
         cursor: pointer;
         display: inline-block;
-        padding: 4px 6px;
         font-size: 18px;
+        padding: 4px 6px;
+        transition: background 0.2s;
 
         &:not(:last-child) {
           margin-right: 5px;

@@ -21,7 +21,7 @@
 import vueSlider from 'vue-slider-component';
 
 export default {
-  name: 'IndexPage',
+  name: 'MoodSlider',
   props: ['mood'],
   components: {
     vueSlider,
@@ -47,6 +47,7 @@ export default {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+    user-select: none;
 
     label {
       cursor: pointer;
