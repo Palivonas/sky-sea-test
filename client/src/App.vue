@@ -88,7 +88,7 @@ export default {
         display: inline-block;
         padding: 4px 6px;
         font-size: 18px;
-        
+
         &:not(:last-child) {
           margin-right: 5px;
         }
@@ -103,7 +103,7 @@ export default {
       }
     }
   }
-  
+
   .page-content {
     margin-top: 25px;
   }

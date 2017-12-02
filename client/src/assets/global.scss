@@ -11,9 +11,9 @@
   font-weight: bold;
 }
 
-html {
+html{
     @include linear-gradient('to bottom right', #0078db, #0d1f3a);
-    height: 100%;
+    min-height: 100%;
 }
 
 body {
