@@ -34,3 +34,8 @@
   background: -o-linear-gradient($_angle-with-vendor-prefix, $color-stops);
   background: linear-gradient($_angle, $color-stops);
 }
+
+@mixin min-max-width($width) {
+  min-width: $width;
+  max-width: $width;
+}

@@ -5,43 +5,68 @@
     </template>
     <section class="movies">
       <movie-tile v-for="movie in movies" :movie="movie" class="item" :key="movie.id"></movie-tile>
+      <div v-if="errorMessage">An error occurred while retrieving movie list:<br /> {{ errorMessage }}</div>
     </section>
   </div>
 </template>
 
 <script>
-import movies from '../data/mockMovies';
-import moods from '../data/moods';
+import * as axios from 'axios';
+
 import MoodSlider from './MoodSlider';
 import MovieTile from './MovieTile';
+
+import moods from '../data/moods';
+
+const MOVIES_URL = 'http://localhost:3001/movies';
+
+const getSingleMood = moodPair => ({
+  id: moodPair.value > 0 ? moodPair.right.id : moodPair.left.id,
+  value: Math.abs(moodPair.value),
+});
 
 export default {
   name: 'IndexPage',
   data() {
     return {
       moods,
-      movies,
+      movies: [],
+      errorMessage: null,
     };
   },
   components: {
     MoodSlider,
     MovieTile,
   },
-  watch: {
-    moods(value) {
-      window.console.log(value);
-    },
-  },
   methods: {
     changeMood(moodId, value) {
       this.moods.find(m => m.id === moodId).value = value;
-      window.console.log(moodId, value);
+      this.updateMovies();
+    },
+    async updateMovies() {
+      this.errorMessage = null;
+      const singleMoods = this.moods
+        .filter(mood => mood.value !== 0)
+        .map(getSingleMood);
+      if (singleMoods.length === 0) {
+        this.movies = [];
+        return null;
+      }
+      return axios.get(MOVIES_URL, { params: { moods: singleMoods } })
+        .then((res) => {
+          this.movies = res.data.movies;
+        })
+        .catch((err) => {
+          this.errorMessage = err.toString();
+        });
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+  @import '../assets/mixins';
+
   .movies {
     display: flex;
     flex-wrap: wrap;
@@ -49,36 +74,20 @@ export default {
 
     > .item {
       flex: 1;
-      min-width: 200px;
+      @include min-max-width(20%);
       margin-bottom: 2px;
-      flex-basis: 0;
-    }
 
-    @media (min-width: 620px) {
-      > .item {
-        max-width: 33.3333%;
+      @media (max-width: 900px) {
+        @include min-max-width(25%);
       }
-    }
-    @media (max-width: 619px) {
-      > .item {
-        max-width: 50%;
+      @media (max-width: 740px) {
+        @include min-max-width(33.3333%);
       }
-    }
-    @media (max-width: 440px) {
-      > .item {
-        min-width: 50%;
+      @media (max-width: 560px) {
+        @include min-max-width(50%);
       }
-    }
-
-    @media (max-width: 340px) {
-      > .item {
-        min-width: 100%;
-      }
-    }
-
-    @media (min-width: 820px) {
-      > .item {
-        max-width: 25%;
+      @media (max-width: 380px) {
+        @include min-max-width(100%);
       }
     }
   }

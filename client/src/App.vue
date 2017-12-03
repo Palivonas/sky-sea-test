@@ -13,7 +13,7 @@
       </header>
       <section class="page-content">
         <IndexPage v-if="currentPage === 'index'"/>
-        <UploadPage v-else-if="currentPage === 'upload'"/>
+        <UploadPage v-else-if="currentPage === 'upload'" @uploadComplete="goToPage('index')"/>
       </section>
       <footer></footer>
     </div>
@@ -51,7 +51,7 @@
   @import 'assets/mixins';
 
   .container {
-    max-width: 820px;
+    max-width: 900px;
     margin: 50px auto 20px;
     padding: 10px;
 

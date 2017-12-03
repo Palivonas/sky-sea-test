@@ -3,15 +3,18 @@
     <div class="image-container">
       <img :src="movie.image" />
       <div class="description">
-        {{ movie.description }}
+        <p v-if="movie.description">{{ movie.description }}</p>
         <div class="certificate" v-if="movie.certificate">Certificate: {{ movie.certificate }}</div>
       </div>
     </div>
-    <h4 class="title">{{ movie.title }}</h4>
+    <h4 class="title">
+      <template v-if="isDev">{{ movie.fitness.toFixed(2) }}:</template>
+      {{ movie.title }}
+    </h4>
     <div class="details">
-      <span>{{ movie.year }}</span>
-      <span>{{ movie.time }}min</span>
-      <span><star-icon class="star" v-for="n in movie.rating" :key="n"/></span>
+      <span v-if="movie.year">{{ movie.year }}</span>
+      <span v-if="movie.time">{{ movie.time }}min</span>
+      <span v-if="movie.rating"><star-icon class="star" v-for="n in movie.rating" :key="n"/></span>
     </div>
   </a>
 </template>
@@ -19,9 +22,14 @@
 <script>
   import StarIcon from './StarIcon';
 
+  const IS_DEV = process.env.NODE_ENV === 'development';
+
   export default {
     name: 'MovieTile',
     props: ['movie'],
+    data() {
+      return { isDev: IS_DEV };
+    },
     components: { StarIcon },
   };
 </script>
@@ -63,9 +71,8 @@
         opacity: 0;
         transition: opacity 0.3s;
 
-        .certificate {
-          text-align: left;
-          margin-top: 10px;
+        p {
+          margin: 0 0 10px;
         }
       }
     }
