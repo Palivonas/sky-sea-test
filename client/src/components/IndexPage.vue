@@ -16,7 +16,7 @@ import * as axios from 'axios';
 import MoodSlider from './MoodSlider';
 import MovieTile from './MovieTile';
 
-import moods from '../data/moods';
+import getMoods from '../data/moods';
 
 const MOVIES_ENDPOINT = `${process.env.API_URL}/movies`;
 
@@ -29,7 +29,7 @@ export default {
   name: 'IndexPage',
   data() {
     return {
-      moods,
+      moods: getMoods(),
       movies: [],
       errorMessage: null,
     };

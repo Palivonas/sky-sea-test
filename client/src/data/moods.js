@@ -1,4 +1,4 @@
-export default [
+export default () => [
   {
     id: 'agitated-calm',
     left: { label: 'Agitated', id: 'agitated' },
