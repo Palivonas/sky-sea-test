@@ -8,6 +8,8 @@ const uploadMoviesHandler = require('./src/uploadMoviesHandler');
 const FileStore = require('./src/fileStore');
 
 const PORT = process.env.PORT || 3001;
+const API_HOST = process.env.HOST || 'localhost';
+const IMAGE_DIR_URL = `http://${API_HOST}${PORT === 80 ? '' : `:${PORT}`}/images`;
 const IMAGE_DIR = process.env.IMAGE_DIR || path.join(__dirname, 'data/images');
 const JSON_STORE_PATH = process.env.STORE_FILE || path.join(__dirname, 'data/movieDatabase.json');
 
@@ -17,7 +19,7 @@ const app = express();
 app.use(cors());
 app.use(fileUpload());
 
-app.get('/movies', getMoviesHandler(store));
+app.get('/movies', getMoviesHandler(store, IMAGE_DIR_URL));
 app.post('/movies', uploadMoviesHandler(store));
 app.use('/images', express.static(IMAGE_DIR));
 

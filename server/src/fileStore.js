@@ -22,7 +22,7 @@ class FileStore {
   }
 
   async insertMovies(newMovies, { flushExisting }) {
-    const newData = newMovies;
+    const newData = [...newMovies];
     if (!flushExisting) {
       const storedList = await this.getMovies();
       newData.push(...storedList

@@ -28,8 +28,9 @@ function getMoviesByMood(movies, userMoods) {
 }
 
 class GetMoviesHandler {
-  constructor(store) {
+  constructor(store, imageDirUrl) {
     this.store = store;
+    this.imageDirUrl = imageDirUrl;
   }
 
   async handleRequest(req, res) {
@@ -48,9 +49,14 @@ class GetMoviesHandler {
 
     const limit = Math.min(Math.abs(parseInt(req.query.limit, 10)) || 5, 20);
     try {
-      const movies = await this.store.getMovies();
-      const moviesByMood = getMoviesByMood(movies, moods).slice(0, limit);
-      res.send({ movies: moviesByMood });
+      const allMovies = await this.store.getMovies();
+      const moviesByMood = getMoviesByMood(allMovies, moods).slice(0, limit);
+      const withImageUrls = moviesByMood
+        .map(movie => ({
+          ...movie,
+          imageUrl: /^https?:\/\//i.test(movie.image) ? movie.image : `${this.imageDirUrl}/${movie.image}`,
+        }));
+      res.send({ movies: withImageUrls });
     } catch (err) {
       res.status(500);
       res.send({ message: 'Unknown error' });
@@ -59,7 +65,7 @@ class GetMoviesHandler {
   }
 }
 
-module.exports = (store) => {
-  const handler = new GetMoviesHandler(store);
+module.exports = (store, imageDirUrl) => {
+  const handler = new GetMoviesHandler(store, imageDirUrl);
   return handler.handleRequest.bind(handler);
 };

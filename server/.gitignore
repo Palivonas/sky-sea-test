@@ -5,8 +5,6 @@ yarn-debug.log*
 yarn-error.log*
 
 data/movieDatabase.json
-data/images/uploaded/*
-!data/images/uploaded/.gitKeep
 
 # Editor directories and files
 .idea
