@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<programmeData>
+	<programmes>
+		<id>a-nightmare-on-elm-street-2010</id>
+		<title>A nightmare on Elm Street</title>
+		<description>A group of teenagers in a small Ohio town find themselves drawn together by recurring nightmares featuring a terrifying figure in a striped pully and a pork pie hat.</description>
+		<time>102</time>
+		<year>2010</year>
+		<rating>3</rating>
+		<certificate>18</certificate>
+		<image>nightmareonelmstreet-KA-1.jpg</image>
+		<url>https://www.sky.com/tv/movie/a-nightmare-on-elm-street-2010</url>
+		<moods>scared</moods>
+		<moods>agitated</moods>
+		<moods>awake</moods>
+		<moodsExclude>fearless</moodsExclude>
+	</programmes>
+	<programmes>
+		<id>school-of-rock-2003</id>
+		<title>School of Rock</title>
+		<description>A stand-in teacher turns his class of nerds into a thumpin' rock act.</description>
+		<time>109</time>
+		<year>2003</year>
+		<rating>3</rating>
+		<certificate>PG</certificate>
+		<image>http://www.asset1.net/tv/pictures/160/237/movie/school-of-rock-2003/school-of-rock-1S.jpg</image>
+		<url>http://www.sky.com/tv/movie/school-of-rock-2003</url>
+		<moods>happy</moods>
+		<moods>awake</moods>
+	</programmes>
+	<programmes>
+		<id>first-blood-1982</id>
+		<title>First Blood</title>
+		<description>Sylvester Stallone unleashes his Vietnam veteran John Rambo on an unsuspecting world as the target of a thrilling manhunt.</description>
+		<time>93</time>
+		<year>1982</year>
+		<rating>3</rating>
+		<certificate>15</certificate>
+		<image>KA-First-Blood.jpg</image>
+		<url>https://www.sky.com/tv/movie/first-blood-1982</url>
+		<moods>awake</moods>
+		<moods>fearless</moods>
+		<moods>agitated</moods>
+	</programmes>
+	<programmes>
+		<id>superman-1978</id>
+		<title>Superman</title>
+		<description>Is it a bird? Is it a plane? No, it's the movie that set the standard for comic-based blockbusters, starring Christopher Reeve as the Man of Steel.</description>
+		<time>143</time>
+		<year>1978</year>
+		<rating>4</rating>
+		<certificate>PG</certificate>
+		<image>Superman-KA-1.jpg</image>
+		<url>http://www.sky.com/tv/movie/superman-1978</url>
+		<moods>awake</moods>
+	</programmes>
+	<programmes>
+		<id>the-blues-brothers-1980</id>
+		<title>The Blues Brothers</title>
+		<description>A pair of felonious brothers reform their old R&amp;B band to save the Chicago orphanage that was their childhood home. Naturally, the law is determined to stop them.</description>
+		<time>135</time>
+		<year>1980</year>
+		<rating>5</rating>
+		<certificate>15</certificate>
+		<image>KA-The-Blues-Brothers.jpg</image>
+		<url>http://www.sky.com/tv/movie/the-blues-brothers-1980</url>
+		<moods>happy</moods>
+		<moods>awake</moods>
+	</programmes>
+	<programmes>
+		<id>psycho-1960</id>
+		<title>Psycho</title>
+		<description>Fleeing thief Janet Leigh lives to regret checking into the lonely motel owned by twitchy mummy's boy Norman Bates (Anthony Perkins).</description>
+		<time>109</time>
+		<year>1960</year>
+		<rating>5</rating>
+		<certificate>15</certificate>
+		<image>psycho-KA-1.jpg</image>
+		<url>http://www.sky.com/tv/movie/psycho-1960</url>
+		<moods>awake</moods>
+		<moods>scared</moods>
+		<moodsExclude>fearless</moodsExclude>
+	</programmes>
+	<programmes>
+		<id>the-revenant-2015</id>
+		<title>The Revenant</title>
+		<description>Mauled by a bear and left for dead by his hunting colleagues in hostile territory, fur trapper Hugh Glass defies the odds and the elements to catch up with the man who betrayed him.</description>
+		<time>156</time>
+		<year>2015</year>
+		<rating>5</rating>
+		<certificate>15</certificate>
+		<image>The-Revenant-KA-2.jpg</image>
+		<url>http://www.sky.com/tv/movie/the-revenant-2015</url>
+		<moods>sad</moods>
+		<moods>agitated</moods>
+		<moods>tired</moods>
+	</programmes>
+	<programmes>
+		<id>red-dog-true-blue-2016</id>
+		<title>The Red Dog: True Blue</title>
+		<description>Sent to live with his grouchy grandfather (Bryan Brown) on his cattle station back in 1968, the 11-year-old Mick (Pan's Levi Miller) comes across a scrappy stray pup he names 'Blue'... </description>
+		<time>88</time>
+		<year>2016</year>
+		<rating>3</rating>
+		<certificate>PG</certificate>
+		<image>Red-Dog-True-Blue-ka-temp-1.jpg</image>
+		<url>http://www.sky.com/tv/movie/red-dog-true-blue-2016</url>
+		<moods>happy</moods>
+		<moods>calm</moods>
+		<moods>tired</moods>
+	</programmes>
+	<programmes>
+		<id>ps-i-love-you-2007</id>
+		<title>P.S. I Love You</title>
+		<description>Thirty-something widow's soul mate is cruelly taken from her by a terminal illness. However, he's thoughtfully arranged to have a series of letters delivered to her door containing instructions to help live her new life.</description>
+		<time>125</time>
+		<year>2007</year>
+		<certificate>12</certificate>
+		<image>KA-PS-I-Love-You.jpg</image>
+		<url>http://www.sky.com/tv/movie/ps-i-love-you-2007</url>
+		<moods>sad</moods>
+		<moods>calm</moods>
+		<moods>tired</moods>
+	</programmes>
+	<programmes>
+		<id>titanic-1997</id>
+		<title>Titanic</title>
+		<description>Kate Winslet and Leonardo DiCaprio play the young lovers whose on-board relationship encapsulates the tragic events surrounding the 1912 voyage of the titular cruise liner.</description>
+		<time>195</time>
+		<year>1997</year>
+		<rating>5</rating>
+		<certificate>12</certificate>
+		<image>Titanic-KA-1.jpg</image>
+		<url>http://www.sky.com/tv/movie/titanic-1997</url>
+		<moods>sad</moods>
+	</programmes>
+	<programmes>
+		<id>paranormal-activity-2007</id>
+		<title>Paranormal Activity</title>
+		<description>A young couple rig up a camcorder in their bedroom with the semi-serious intention of capturing on film a spirit the girlfriend feels is haunting their new house.</description>
+		<time>86</time>
+		<year>2007</year>
+		<rating>4</rating>
+		<certificate>15</certificate>
+		<image>http://www.asset1.net/tv/pictures/160/237/movie/paranormal-activity-2007/Paranormal-Activity-KA-1.jpg</image>
+		<url>http://www.sky.com/tv/movie/paranormal-activity-2007</url>
+		<moods>scared</moods>
+		<moods>awake</moods>
+	</programmes>
+</programmeData>
