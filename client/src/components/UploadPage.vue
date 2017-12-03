@@ -64,7 +64,7 @@
           })
           .catch((err) => {
             this.status = STATUS_ERROR;
-            this.errorMessage = err.response;
+            this.errorMessage = (err.data && err.data.message) || 'Unexpected error occurred';
           })
           .then(() => {
             this.file = null;
