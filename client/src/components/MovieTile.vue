@@ -1,7 +1,7 @@
 <template>
   <a class="movie-tile" :href="movie.url" target="_blank">
     <div class="image-container">
-      <img :src="movie.image" />
+      <img :src="movie.imageUrl" />
       <div class="description">
         <p v-if="movie.description">{{ movie.description }}</p>
         <div class="certificate" v-if="movie.certificate">Certificate: {{ movie.certificate }}</div>

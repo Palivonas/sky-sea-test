@@ -19,7 +19,7 @@
 <script>
   import * as axios from 'axios';
 
-  const UPLOAD_URL = 'http://localhost:3001/movies';
+  const MOVIES_ENDPOINT = process.env.MOVIES_ENDPOINT;
   const STATUS_UPLOADING = 'uploading';
   const STATUS_SUCCESS = 'success';
   const STATUS_ERROR = 'error';
@@ -77,7 +77,7 @@
       upload(file) {
         const form = new FormData();
         form.append('movieList', file);
-        const url = UPLOAD_URL + (this.flushExisting ? '?flushExisting=true' : '');
+        const url = MOVIES_ENDPOINT + (this.flushExisting ? '?flushExisting=true' : '');
         return axios.post(url, form);
       },
     },

@@ -18,7 +18,7 @@ import MovieTile from './MovieTile';
 
 import moods from '../data/moods';
 
-const MOVIES_URL = 'http://localhost:3001/movies';
+const MOVIES_ENDPOINT = process.env.MOVIES_ENDPOINT;
 
 const getSingleMood = moodPair => ({
   id: moodPair.value > 0 ? moodPair.right.id : moodPair.left.id,
@@ -52,7 +52,7 @@ export default {
         this.movies = [];
         return null;
       }
-      return axios.get(MOVIES_URL, { params: { moods: singleMoods } })
+      return axios.get(MOVIES_ENDPOINT, { params: { moods: singleMoods } })
         .then((res) => {
           this.movies = res.data.movies;
         })
