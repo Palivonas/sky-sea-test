@@ -18,7 +18,7 @@ import MovieTile from './MovieTile';
 
 import moods from '../data/moods';
 
-const MOVIES_ENDPOINT = process.env.MOVIES_ENDPOINT;
+const MOVIES_ENDPOINT = `${process.env.API_URL}/movies`;
 
 const getSingleMood = moodPair => ({
   id: moodPair.value > 0 ? moodPair.right.id : moodPair.left.id,

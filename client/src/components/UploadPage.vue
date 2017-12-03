@@ -19,7 +19,7 @@
 <script>
   import * as axios from 'axios';
 
-  const MOVIES_ENDPOINT = process.env.MOVIES_ENDPOINT;
+  const MOVIES_ENDPOINT = `${process.env.API_URL}/movies`;
   const STATUS_UPLOADING = 'uploading';
   const STATUS_SUCCESS = 'success';
   const STATUS_ERROR = 'error';
