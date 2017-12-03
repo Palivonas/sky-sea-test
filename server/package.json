@@ -7,5 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Andrius Palivonas <andrius@palivonas.lt>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "express-fileupload": "^0.3.0"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb-standard": "^1.6.5"
+  }
 }
