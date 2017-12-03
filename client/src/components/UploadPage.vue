@@ -5,9 +5,11 @@
     <label class="upload-button" for="movieFileUpload" tabindex="0" :disabled="isUploading">
       {{ isUploading ? 'Uploading...' : 'Select a file' }}
     </label>
-    <input type="checkbox" v-model="flushExisting" id="flushExisting"/>
-    <label for="flushExisting">Clear existing movies</label>
-    <div class="message message--success" v-if="isSuccess">Database has been updated! Feel free to try the sliders now.</div>
+    <p>
+      <input type="checkbox" v-model="flushExisting" id="flushExisting"/>
+      <label for="flushExisting" class="flush-label">Clear existing movies</label>
+    </p>
+    <div class="message message--success" v-if="isSuccess">Database has been updated! Redirecting back to sliders in a second.</div>
     <div class="message message--error" v-else-if="isError">{{ errorMessage || 'Unexpected error' }}</div>
 
     <form enctype="multipart/form-data">
@@ -60,7 +62,7 @@
         this.upload(file)
           .then(() => {
             this.status = STATUS_SUCCESS;
-            this.$emit('uploadComplete');
+            setTimeout(() => this.$emit('uploadComplete'), 1800);
           })
           .catch((err) => {
             this.status = STATUS_ERROR;
@@ -88,24 +90,37 @@
   #movieFileUpload {
     display: none;
   }
+
   .upload-button {
-    font-size: 1.6em;
+    font-size: 1.4em;
     text-transform: uppercase;
-    padding: 3px 5px;
-    background: rgba(white, 0.6);
+    padding: 7px 9px;
+    background: rgba(173, 216, 230, 0.25);
     border-radius: 2px;
     cursor: pointer;
+    transition: background 0.2s;
 
     &:hover {
-      background: rgba(white, 0.8);
+      background: rgba(white, 0.35);
     }
   }
+
+  .flush-label {
+    padding-left: 4px;
+    vertical-align: middle;
+  }
+
   .message {
+    color: white;
+    display: inline-block;
+    padding: 5px 7px;
+    border-radius: 2px;
+
     &--success {
-      color: lime;
+      background: #0f8a0f;
     }
     &--error {
-      color: red;
+      background: #af1e1e;
     }
   }
 </style>
