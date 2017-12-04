@@ -146,5 +146,6 @@
 		<url>http://www.sky.com/tv/movie/paranormal-activity-2007</url>
 		<moods>scared</moods>
 		<moods>awake</moods>
+		<moodsExclude>fearless</moodsExclude>
 	</programmes>
 </programmeData>
