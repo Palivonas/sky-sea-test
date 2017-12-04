@@ -48,3 +48,7 @@ Components for each slider and movie are implemented. And for the little stars a
 No state management library is used as the app is very simple. I would use [vuex](https://vuex.vuejs.org/) if the app complexity increased.
 
 The client is Airbnb linted as well.
+
+![App screenshot](/screenshot.png?raw=true)
+
+The ugly line-wrapped title is included on purpose, because in real life you will get a too-long title sooner or later. I could probably deal with it better, but at least it doesn't wreak havoc on the layout.
