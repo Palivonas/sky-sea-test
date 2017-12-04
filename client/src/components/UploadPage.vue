@@ -9,7 +9,7 @@
       <input type="checkbox" v-model="flushExisting" id="flushExisting"/>
       <label for="flushExisting" class="flush-label">Clear existing movies</label>
     </p>
-    <div class="message message--success" v-if="isSuccess">Database has been updated! Redirecting back to sliders in a second.</div>
+    <div class="message message--success" v-if="isSuccess">Database has been updated! Redirecting back to sliders in a moment.</div>
     <div class="message message--error" v-else-if="isError">{{ errorMessage || 'Unexpected error' }}</div>
 
     <form enctype="multipart/form-data">
