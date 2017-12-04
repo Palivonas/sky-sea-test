@@ -7,10 +7,7 @@
         <div class="certificate" v-if="movie.certificate">Certificate: {{ movie.certificate }}</div>
       </div>
     </div>
-    <h4 class="title">
-      <template v-if="isDev">{{ movie.fitness.toFixed(2) }}:</template>
-      {{ movie.title }}
-    </h4>
+    <h4 class="title">{{ movie.title }}</h4>
     <div class="details">
       <span v-if="movie.year">{{ movie.year }}</span>
       <span v-if="movie.time">{{ movie.time }}min</span>
@@ -22,14 +19,9 @@
 <script>
   import StarIcon from './StarIcon';
 
-  const IS_DEV = process.env.NODE_ENV === 'development';
-
   export default {
     name: 'MovieTile',
     props: ['movie'],
-    data() {
-      return { isDev: IS_DEV };
-    },
     components: { StarIcon },
   };
 </script>
