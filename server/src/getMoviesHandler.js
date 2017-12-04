@@ -60,7 +60,7 @@ class GetMoviesHandler {
     } catch (err) {
       res.status(500);
       res.send({ message: 'Unknown error' });
-      console.error('Failed to retrieve movies:', req.query, err);
+      console.error(`Failed to retrieve movies, IP address ${req.connection.remoteAddress}`, req.query, err);
     }
   }
 }

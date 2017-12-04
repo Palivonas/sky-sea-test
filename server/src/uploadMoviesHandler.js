@@ -51,10 +51,11 @@ class UploadMoviesHandler {
     try {
       await this.store.insertMovies(movies, { flushExisting: !!req.query.flushExisting });
       res.send({ message: 'Movies uploaded' });
+      console.log(`${file.name} uploaded, IP address ${req.connection.remoteAddress}`);
     } catch (err) {
       res.status(500);
       res.send({ message: 'Unexpected error' });
-      console.error('Failed to upload movies:', err);
+      console.error(`${file.name} failed to upload, IP address ${req.connection.remoteAddress}`, err);
     }
   }
 }
